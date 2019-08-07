@@ -1,5 +1,12 @@
 <h1>어드민 페이지</h1>
 
+{% for questions in questions.all %}
+<div class="container">
+	<h1>{{ questions.title }}</h1>
+	<p>{{ questions.body }}</p>
+</div>
+{% endfor %}
+
 <br>
 <div class="container">
 	<form action="{% url 'create' %}">
@@ -13,4 +20,5 @@
 	  <br>
 	  <input class="btn btn-dark" type="submit" value="제출하기">
   </form>
+  
 </div>

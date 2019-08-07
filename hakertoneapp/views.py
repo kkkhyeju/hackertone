@@ -48,7 +48,9 @@ def index(request):
     return render(request,'index.html')
     
 def ad_page(request):
-    return render(request,'ad_page.html')
+    questions = Question.objects
+    return render(request,'ad_page.html',{'questions':questions})
+    #return render(request,'ad_page.html')
 
 def create(request):
     question = Question()

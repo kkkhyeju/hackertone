@@ -22,6 +22,9 @@ class Profile(models.Model):
 class Question(models.Model):  
     title = models.TextField()
     body = models.TextField()
+    
+    def __str__(self):
+        return self.title
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):  
